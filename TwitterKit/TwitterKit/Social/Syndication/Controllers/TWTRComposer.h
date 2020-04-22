@@ -37,7 +37,7 @@ typedef NS_ENUM(NSInteger, TWTRComposerResult) {
 /**
  *  Completion block called when the user finishes composing a Tweet.
  */
-typedef void (^TWTRComposerCompletion)(TWTRComposerResult result);
+typedef void (^TWTRComposerCompletion)(TWTRComposerResult result,  NSError * _Nullable error);
 
 /**
  *  The TWTRComposer class presents a view to the user to compose a Tweet.

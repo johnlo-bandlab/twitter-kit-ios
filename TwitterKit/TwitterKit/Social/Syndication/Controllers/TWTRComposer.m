@@ -95,7 +95,7 @@ static dispatch_once_t onceToken;
             } else {
                 NSLog(@"[TwitterKit] No users for composer.");
                 if (self.completion) {
-                    self.completion(TWTRComposerResultCancelled);
+                    self.completion(TWTRComposerResultCancelled, error);
                 }
             }
         }];
@@ -132,14 +132,14 @@ static dispatch_once_t onceToken;
 - (void)composerDidCancel:(TWTRComposerViewController *)controller
 {
     if (self.completion) {
-        self.completion(TWTRComposerResultCancelled);
+        self.completion(TWTRComposerResultCancelled, nil);
     }
 }
 
 - (void)composerDidSucceed:(TWTRComposerViewController *)controller withTweet:(TWTRTweet *)tweet
 {
     if (self.completion) {
-        self.completion(TWTRComposerResultDone);
+        self.completion(TWTRComposerResultDone, nil);
     }
 }
 
@@ -147,7 +147,7 @@ static dispatch_once_t onceToken;
 {
     NSLog(@"[TwitterKit] Composer did fail: %@", error);
     if (self.completion) {
-        self.completion(TWTRComposerResultCancelled);
+        self.completion(TWTRComposerResultCancelled, error);
     }
 }
 
