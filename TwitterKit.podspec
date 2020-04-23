@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'TwitterKit'
-  s.version          = '3.4.3'
+  s.version          = '3.4.5'
   s.summary          = 'TwitterKit bandlab fork'
  
   s.description      = <<-DESC
